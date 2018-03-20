@@ -26,6 +26,7 @@ security:
 spring:
   profiles: container
     datasource:
+      driver-class-name: com.mysql.jdbc.Driver
       url: jdbc:mysql://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}
       username: ${DATABASE_USER}
       password: ${DATABASE_PASSWORD}
