@@ -30,7 +30,7 @@ spring:
          password: test123
          platform: mysql
          schema: classpath:/sql/schema.sql
-         url: jdbc:mysql://localhost:2012/spring_app_db
+         url: jdbc:mysql://172.17.0.2:2012/spring_app_db
 username: app_user
 jpa:
           database-platform: org.hibernate.dialect.MySQLDialect
