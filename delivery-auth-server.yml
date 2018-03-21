@@ -24,14 +24,23 @@ security:
               scope: read,write
  
 spring:
-     datasource:
-         data: classpath:/sql/data.sql
-         driver-class-name: com.mysql.jdbc.Driver
-         password: test123
-         platform: mysql
-         schema: classpath:/sql/schema.sql
-         url: jdbc:mysql://localhost:2012/spring_app_db?useSSL=false
-username: app_user
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_app_db
+    username: app_user
+    password: test123
+    platform: mysql
+    initialize: false
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+---
+spring:
+  profiles: container
+  datasource:
+    url: jdbc:mysql://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+    initialize: true
 jpa:
           database-platform: org.hibernate.dialect.MySQLDialect
           generate-ddl: false
