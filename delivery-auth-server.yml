@@ -30,7 +30,7 @@ spring:
          password: test123
          platform: mysql
          schema: classpath:/sql/schema.sql
-         url: jdbc:mysql://mysql-docker-container:3306/spring_app_db?useSSL=false
+         url: jdbc:mysql://localhost:2012/spring_app_db?useSSL=false
 username: app_user
 jpa:
           database-platform: org.hibernate.dialect.MySQLDialect
